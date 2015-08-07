@@ -22,6 +22,14 @@
 		<?php the_content(); ?>
 		<?php if (is_front_page()) { ?>
 			<div class="entry-content">
+				<!-- DEBUT Présentation du club -->
+				<?php 
+					$pagePresentationClub = get_page(9); 
+					echo "<h1 style=\"margin-top: -10px;\">" . $pagePresentationClub->post_title . "</h1>";
+					echo $pagePresentationClub->post_content;
+				?>
+				<!-- FIN Présentation du club -->
+				<h1><?php the_title(); ?></h1>
 				<ul class="home-news">
 				<?php
 				global $post;
@@ -31,10 +39,20 @@
 				?>
 					<li>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="home-news-img">
-						 	<?php the_post_thumbnail( 'sparkling-featured', array( 'class' => 'home-news-featured' )); ?>
+						 	<?php if (has_post_thumbnail()){
+						 		the_post_thumbnail( 'sparkling-featured', array( 'class' => 'home-news-featured' )); 
+						 	}else{ ?>
+								<div class="home-news-no-featured"></div>
+					 		<?php } ?>
 						</a>
 						<div class="home-news-content">
-							<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+							<?php $categoryClass = '';
+							foreach (get_the_category() as $category) {
+								if($category->slug != "a-la-une"){
+									$categoryClass .= ' ' . $category->slug;
+								}
+							}?>
+							<h1 class="entry-title <?php echo $categoryClass; ?>"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 							<div class="entry-content">
 
 								<?php
@@ -48,14 +66,14 @@
 								<p><a class="btn btn-default read-more" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html_e( 'Read More', 'sparkling' ); ?></a></p>
 
 								<?php
-									wp_link_pages( array(
+									/*wp_link_pages( array(
 										'before'            => '<div class="page-links">'.esc_html__( 'Pages:', 'sparkling' ),
 										'after'             => '</div>',
 										'link_before'       => '<span>',
 										'link_after'        => '</span>',
 										'pagelink'          => '%',
 										'echo'              => 1
-						       		) );
+						       		) );*/
 						    	?>
 							</div>
 						</div>

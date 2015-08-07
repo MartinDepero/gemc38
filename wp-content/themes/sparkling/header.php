@@ -61,7 +61,6 @@
 							<?php endif; // header image was removed (again) ?>
 
 						</div>
-						<h1 class="mainheader">Grenoble Métropole Cyclisme 38</h1>
 						<?php sparkling_header_menu(); // main navigation ?>
 					</div>
 				</div>

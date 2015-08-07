@@ -52,10 +52,6 @@ body {
 a {
   color: #DA4453;
   text-decoration: none;
-  -webkit-transition: all 0.3s;
-     -moz-transition: all 0.3s;
-       -o-transition: all 0.3s;
-          transition: all 0.3s;
 }
 
 a:hover,
@@ -824,10 +820,13 @@ button:hover {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   padding: 0;
-  margin: 15px 15px 15px 15px;
+  margin: 13px 15px 15px 15px;
   background-color: transparent;
   border-top: 5px solid #0000ff;
   color: #ffffff;
+}
+.dropdown-menu{
+  top: 70px;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus,
@@ -1422,6 +1421,11 @@ ul.home-news li{
   max-width: 290px;
 }
 
+.home-news-no-featured {
+  width: 290px;
+  height: 160px;
+}
+
 .home-news li a.home-news-img{
   float: left;
   margin-right: 15px;
@@ -1437,4 +1441,37 @@ ul.home-news li{
   position: absolute;
   right: 15px;
   bottom: 5px;
+}
+
+/* Code couleur des titre d'actualités en page d'accueil */
+@media (min-width: 600px) {
+  .home-news-content .entry-content{
+    margin-left: 300px;
+  }
+  .home-news-content .entry-title {
+    margin-left: 300px;
+  }
+  .home-news-content .entry-title.formation {
+    background:linear-gradient(to right, rgba(0,0,255,0.5), rgba(0,0,255,0));
+  }
+  .home-news-content .entry-title.competition {
+    background:linear-gradient(to right, rgba(218,68,83,0.5), rgba(255,0,0,0));
+  }
+  .home-news-content .entry-title.sport-sante {
+    background:linear-gradient(to right, rgba(0,255,0,0.5), rgba(0,255,0,0));
+  }
+}
+
+.home-news-content .entry-title a:hover {
+  color: #606060;
+}
+
+.flex-caption .entry-title.formation{
+  background: rgba(0,0,255,0.5);
+}
+.flex-caption .entry-title.competition{
+  background: rgba(218,68,83,0.5);
+}
+.flex-caption .entry-title.sport-sante{
+  background: rgba(0,255,0,0.5);
 }

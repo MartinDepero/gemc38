@@ -263,7 +263,13 @@ function sparkling_featured_slider() {
             endif;
 
               echo '<div class="flex-caption">';
-                  if ( get_the_title() != '' ) echo '<h2 class="entry-title">'. get_the_title().'</h2>';
+                  $categoryClass = '';
+                  foreach (get_the_category() as $category) {
+                    if($category->slug != "a-la-une"){
+                      $categoryClass .= ' ' . $category->slug;
+                    }
+                  }
+                  if ( get_the_title() != '' ) echo '<h2 class="entry-title ' . $categoryClass . '">'. get_the_title().'</h2>';
                   if ( get_the_excerpt() != '' ) echo '<div class="excerpt">' . get_the_excerpt() .'</div>';
               echo '</div>';
 
