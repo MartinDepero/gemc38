@@ -54,7 +54,6 @@
 							}?>
 							<h1 class="entry-title <?php echo $categoryClass; ?>"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 							<div class="entry-content">
-
 								<?php
 								if ( get_theme_mod( 'sparkling_excerpts' ) == 1 ) :
 									the_excerpt();
@@ -63,7 +62,7 @@
 								endif;
 								 ?>
 
-								<p><a class="btn btn-default read-more" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html_e( 'Read More', 'sparkling' ); ?></a></p>
+								<p><span class="posted-on"><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></span><a class="btn btn-default read-more" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html_e( 'Read More', 'sparkling' ); ?></a></p>
 
 								<?php
 									/*wp_link_pages( array(

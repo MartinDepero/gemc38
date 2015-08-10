@@ -12,16 +12,17 @@
 			<h1 class="entry-title "><?php the_title(); ?></h1>
 
 			<div class="entry-meta">
-				<?php sparkling_posted_on(); ?>
+				<?php /*sparkling_posted_on();*/ ?>
+				<span class="posted-on"><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></span>
 
 				<?php
 					/* translators: used between list items, there is a space after the comma */
 					$categories_list = get_the_category_list( esc_html__( ', ', 'sparkling' ) );
 					if ( $categories_list && sparkling_categorized_blog() ) :
 				?>
-				<span class="cat-links"><i class="fa fa-folder-open-o"></i>
+				<!--<span class="cat-links"><i class="fa fa-folder-open-o"></i>
 					<?php printf( esc_html__( ' %1$s', 'sparkling' ), $categories_list ); ?>
-				</span>
+				</span>-->
 				<?php endif; // End if categories ?>
 				<?php edit_post_link( esc_html__( 'Edit', 'sparkling' ), '<i class="fa fa-pencil-square-o"></i><span class="edit-link">', '</span>' ); ?>
 
