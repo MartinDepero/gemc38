@@ -25,7 +25,6 @@
 				<!-- DEBUT Présentation du club -->
 				<?php 
 					$pagePresentationClub = get_page(9); 
-					echo "<h1 style=\"margin-top: -10px;\">" . $pagePresentationClub->post_title . "</h1>";
 					echo $pagePresentationClub->post_content;
 				?>
 				<!-- FIN Présentation du club -->

@@ -550,7 +550,7 @@ object {
 .not-found-widget {
   margin-top: 30px;
 }
-@media (max-width: 767px) {
+@media (max-width: 990px) {
     #secondary {
         clear: both;
     }
@@ -845,7 +845,7 @@ button:hover {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
   color: #DADADA;
 }
-@media (min-width: 767px) {
+@media (min-width: 990px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #656D78;
   }
@@ -887,7 +887,7 @@ button:hover {
 .nav.navbar-nav {
   float: right;
 }
-@media (max-width: 767px) {
+@media (max-width: 990px) {
   .nav.navbar-nav {
     float: none;
   }
@@ -1003,7 +1003,7 @@ p.logged-in-as {
   font-size: 10px;
   text-transform: uppercase;
 }
-@media(max-width:767px){
+@media(max-width:990px){
   .post-inner-content {
     padding: 20px 25px;
   }
@@ -1364,7 +1364,7 @@ p.logged-in-as {
   background-color: #DA4453;
   color: #fff;
 }
-@media (max-width: 767px) {
+@media (max-width: 990px) {
   .cfa {
     padding: 0 0 20px;
   }
@@ -1402,9 +1402,18 @@ header h1.mainheader {
   text-align: center;
 }
 
+@media (min-width: 990px) {
+  #logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+  }
+}
+
 #logo img{
-  height: 150px;
-  width: auto;
+height: 150px;
+width: auto;
 }
 
 /* Actu accueil */
