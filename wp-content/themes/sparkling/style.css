@@ -1484,3 +1484,25 @@ ul.home-news li{
 .flex-caption .entry-title.sport-sante{
   background: rgba(0,255,0,0.5);
 }
+
+/* TPL resultat */
+div.resulats-filter-year{
+  height:0px;
+}
+div.resulats-filter-year a{
+  float: right;
+  display: block;
+}
+a.resulats {
+  margin: 1px;
+}
+a.resulats.selected {
+  background-color: #363636;
+  border-color: #363636;
+}
+ul.reusltats-list-month{
+  display: none;
+}
+div.resulats-filter-month a.month-filter{
+  padding: 5px;
+}
