@@ -22,12 +22,6 @@
 		<?php the_content(); ?>
 		<?php if (is_front_page()) { ?>
 			<div class="entry-content">
-				<!-- DEBUT Présentation du club -->
-				<?php 
-					$pagePresentationClub = get_page(9); 
-					echo $pagePresentationClub->post_content;
-				?>
-				<!-- FIN Présentation du club -->
 				<h1><?php the_title(); ?></h1>
 				<ul class="home-news">
 				<?php
