@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Resultats Comptetition
+Template Name: Resultats
 */
 get_header(); ?>
 
@@ -37,7 +37,29 @@ get_header(); ?>
 						}else{
 							$postYear = date("Y");
 						}
-						$myposts = $wpdb->get_results( "SELECT wp_posts.* FROM wp_posts WHERE post_type = 'post' AND post_status = 'publish' AND YEAR(post_date) = '" . $postYear . "' ORDER BY post_date" );
+						$idPostCategory = 0;
+						if(in_array('competition', explode('/', $_SERVER['REQUEST_URI']))){
+							$idPostCategory = 5;
+						}elseif(in_array('formation', explode('/', $_SERVER['REQUEST_URI']))){
+							$idPostCategory = 6;
+						}
+						
+						$query = "
+							SELECT * FROM $wpdb->posts
+							LEFT JOIN $wpdb->term_relationships ON
+							($wpdb->posts.ID = $wpdb->term_relationships.object_id)
+							LEFT JOIN $wpdb->term_taxonomy ON
+							($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id)
+							WHERE $wpdb->posts.post_status = 'publish'
+							AND $wpdb->term_taxonomy.taxonomy = 'category'
+							AND $wpdb->term_taxonomy.term_id = " . $idPostCategory . "
+							AND YEAR(post_date) = '" . $postYear . "' 
+							AND post_type = 'post'
+							ORDER BY post_date
+							";
+
+						$myposts = $wpdb->get_results($query);
+						
 						$current_url = explode("?", $_SERVER['REQUEST_URI']);
 						?>
 
