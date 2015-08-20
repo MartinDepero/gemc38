@@ -1502,6 +1502,29 @@ a.resulats.selected {
 }
 ul.reusltats-list-month{
   display: none;
+  margin-top:15px;
+}
+ul.reusltats-list-month li{
+  display: block;
+  background: #F2F2F2;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+}
+ul.reusltats-list-month li:hover{
+  background: #CFCFCF;
+  cursor: pointer;
+}
+ul.reusltats-list-month li a:hover{
+  color: #DA4453;
+}
+ul.reusltats-list-month li span.titre-archive{
+  display:block;
+  font-weight: bolder;
+}
+ul.reusltats-list-month li span.date-archive{
+  display:block;
+  margin-left: 20px;
+  margin-top: -6px;
 }
 div.resulats-filter-month a.month-filter{
   padding: 5px;

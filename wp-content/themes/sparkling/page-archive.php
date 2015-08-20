@@ -86,7 +86,7 @@ get_header(); ?>
 
 							<?php $previous_year = $year; $previous_month = $month; ?>
 
-							<li><span><?php the_time('j F'); ?> - </span> <span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span></li>
+							<li onclick="window.location = '<?php the_permalink(); ?>';"><span class="titre-archive"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span><span class="date-archive"><?php the_time('j F'); ?></span> </li>
 
 						<?php endforeach; ?>
 						</ul>
