@@ -26,7 +26,21 @@
 				<ul class="home-news">
 				<?php
 				global $post;
-				$myposts = get_posts('numberposts=5');
+				$args = array(
+				    'post_type' => 'post',
+				    'post_status'   => 'publish',
+				    'date_query'    => array(
+				        'column'  => 'post_date',
+				        'after'   => '- 30 days'
+				    )
+				);
+
+				$myposts = get_posts( $args );
+
+				if(count($myposts) < 8){
+					$myposts = get_posts('numberposts=8');
+				}
+
 				foreach($myposts as $post) :
 					setup_postdata($post);
 				?>
@@ -56,22 +70,30 @@
 								 ?>
 
 								<p><span class="posted-on"><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></span><a class="btn btn-default read-more" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html_e( 'Read More', 'sparkling' ); ?></a></p>
-
-								<?php
-									/*wp_link_pages( array(
-										'before'            => '<div class="page-links">'.esc_html__( 'Pages:', 'sparkling' ),
-										'after'             => '</div>',
-										'link_before'       => '<span>',
-										'link_after'        => '</span>',
-										'pagelink'          => '%',
-										'echo'              => 1
-						       		) );*/
-						    	?>
 							</div>
 						</div>
 					</li>
 			<?php endforeach;?>
 			</ul></div>
+			<script type="text/javascript" src="<?php get_template_directory_uri(); ?>/wp-content/themes/sparkling/inc/js/liScroll.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function(){
+					<?php 
+						$my_id = 548;
+						$postFlash = get_post($my_id);
+						$content = $postFlash->post_content;
+						$content = apply_filters('the_content', $content);
+						$content = preg_replace( "/\r|\n/", "", $content);
+						$content = str_replace("<ul>", "<ul id=\"flash-info\">", $content);
+						if($content != ""){
+					?>
+					jQuery('<?php echo $content ?>').insertBefore('.container.main-content-area');
+					jQuery(function(){
+					    jQuery("ul#flash-info").liScroll();
+					});	
+					<?php } ?>	
+				});
+			</script>
 		<?php } ?>
 		<?php
 			wp_link_pages( array(

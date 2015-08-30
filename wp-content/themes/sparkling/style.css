@@ -1469,6 +1469,9 @@ ul.home-news li{
   .home-news-content .entry-title.sport-sante {
     background:linear-gradient(to right, rgba(0,255,0,0.5), rgba(0,255,0,0));
   }
+  .home-news-content .entry-title.cohesion-sociale {
+    background:linear-gradient(to right, rgba(238,238,0,0.5), rgba(238,238,0,0));
+  }
 }
 
 .home-news-content .entry-title a:hover {
@@ -1476,15 +1479,18 @@ ul.home-news li{
 }
 
 .flex-caption .entry-title.formation{
-  background: rgba(0,0,255,0.5);
+  background: rgba(0,0,255,0.6);
 }
 .flex-caption .entry-title.competition{
-  background: rgba(218,68,83,0.5);
+  background: rgba(218,68,83,0.6);
 }
 .flex-caption .entry-title.sport-sante{
-  background: rgba(0,255,0,0.5);
+  background: rgba(0,255,0,0.6);
 }
-
+.flex-caption .entry-title.cohesion-sociale{
+  background: rgba(238,238,0,0.7);
+}
+  
 /* TPL resultat */
 div.resulats-filter-year{
   height:0px;
@@ -1529,3 +1535,47 @@ ul.reusltats-list-month li span.date-archive{
 div.resulats-filter-month a.month-filter{
   padding: 5px;
 }
+
+/* liScroll styles */
+
+.tickercontainer { /* the outer div with the black border */
+border: 1px solid #F2F2F2;
+background: #fff; 
+width: 100%; 
+height: 27px; 
+margin: 0; 
+padding: 0;
+overflow: hidden; 
+}
+.tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */
+position: relative;
+left: 10px;
+top: 8px;
+width: 100%;
+overflow: hidden;
+}
+ul.newsticker { /* that's your list */
+position: relative;
+left: 100%;
+font: bold 10px Verdana;
+list-style-type: none;
+margin: 0;
+padding: 0;
+
+}
+ul.newsticker li {
+float: left; /* important: display inline gives incorrect results when you check for elem's width */
+margin: 0;
+padding: 0;
+background: #fff;
+}
+ul.newsticker a {
+white-space: nowrap;
+padding: 0;
+color: #ff0000;
+font: bold 10px Verdana;
+margin: 0 50px 0 0;
+} 
+ul.newsticker span {
+margin: 0 10px 0 0;
+} 
