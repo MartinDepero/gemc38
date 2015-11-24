@@ -47,7 +47,7 @@
 					<li>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="home-news-img">
 						 	<?php if (has_post_thumbnail()){
-						 		the_post_thumbnail( 'sparkling-featured', array( 'class' => 'home-news-featured' )); 
+						 		the_post_thumbnail( 'sparkling-home-thumbnail', array( 'class' => 'home-news-featured' )); 
 						 	}else{ ?>
 								<div class="home-news-no-featured"></div>
 					 		<?php } ?>

@@ -63,6 +63,8 @@ function sparkling_setup() {
 
   add_image_size( 'sparkling-featured', 750, 410, true );
   add_image_size( 'tab-small', 60, 60 , true); // Small Thumbnail
+  add_image_size( 'sparkling-slider-crop', 1000, 410, true );
+  add_image_size( 'sparkling-slider-non-crop', 750, 410, false );
 
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(

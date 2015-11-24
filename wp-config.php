@@ -16,19 +16,19 @@
  *
  * @package WordPress
  */
-
+ ini_set('display_errors', '1');
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
-define('DB_NAME', 'gemc38');
+define('DB_NAME', 'gmcsymqbroot');
 
 /** Utilisateur de la base de données MySQL. */
-define('DB_USER', 'root');
+define('DB_USER', 'gmcsymqbroot');
 
 /** Mot de passe de la base de données MySQL. */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', '4q3j4HVm7K');
 
 /** Adresse de l'hébergement MySQL. */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'gmcsymqbroot.mysql.db');
 
 /** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
 define('DB_CHARSET', 'utf8mb4');
@@ -87,3 +87,6 @@ if ( !defined('ABSPATH') )
 
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/** On desactive le versionning des posts pour optimiser les performence */
+define( 'WP_POST_REVISIONS', false );
