@@ -1579,3 +1579,13 @@ margin: 0 50px 0 0;
 ul.newsticker span {
 margin: 0 10px 0 0;
 } 
+
+/* Event manager */
+table.em-calendar.fullcalendar {
+width: 100%;
+min-height: 340px;
+} 
+
+p.em-tickets-spaces {
+  display: none;
+}
